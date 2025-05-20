@@ -1,5 +1,7 @@
 #!/bin/bash
 
+
+#this is comment
 NUMBER1=100
 NUMBER2=200
 
