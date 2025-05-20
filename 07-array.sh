@@ -6,4 +6,4 @@
 
 
 movies=("puspha" "HIT3" "Eega")
-echo "first movie: ${movies[2]}"
+echo "first movie: ${movies[4]}"
