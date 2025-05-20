@@ -4,6 +4,6 @@
 
 Names=("shiva" "mounika" "jaiishva")
 
-for Names in "$(NNames[@])"; do
+for Names in "$(Names[@])"; do
  echo "Names: $Names"
 done 
