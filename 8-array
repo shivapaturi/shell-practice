@@ -1,9 +1,5 @@
 #!/bin/bash
 
 
-
-Names=("shiva" "mounika" "jaiishva")
-
-for Names in "${Names[@]}"; do
- echo "Names: $Names"
-done 
+numbers=(10 20 30 40)
+echo "Number of elements: ${#numbers[@]}"
