@@ -1,5 +1,4 @@
 #!/bin/bash
 
-echo "Enter your name:"
-read name
-echo "Welcome, $name!"
+name="Alice"
+echo "Hello, $name!"
