@@ -1,5 +1,0 @@
-#!/bin/bash
-
-
-numbers=(10 20 30 40)
-echo "Number of elements: ${#numbers[@]}"
