@@ -1,7 +1,9 @@
 #!/bin/bash
 
-colors=("red" "green" "blue")
 
-for color in "${colors[@]}"; do
-  echo "Color: $color"
-done
+
+Names=("shiva" "mounika" "jaiishva")
+
+for Names in "$(NNames[@])"; do
+ echo "Names: $Names"
+done 
