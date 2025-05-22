@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ls /some/directory
+
 if [ $? -eq 0 ]; then
     echo "Command succeeded"
 else
