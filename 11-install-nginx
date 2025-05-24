@@ -1,17 +1,16 @@
 #!/bin/bash
 
 userid=$(id -u)
-if [ $userid -eq 0 ]
+if [ $userid -ne 0 ]
 then
-    echo "you are running with the root access"
+    echo "ERROR: please run with the root acces"
 else
-    echo "ERROR: please run with the roor acces"
+    echo "you are running with the root access"
 fi
 
 dnf install nginx
-if [ $? -eq 0 ]
-    echo "nginx is installed and success"
-    
+if [ $? -ne 0 ]
+    echo "nginx is not installed and please install"
 else
-    ech "nginx need to install"
+    echo "nginx is already installed"
 fi
