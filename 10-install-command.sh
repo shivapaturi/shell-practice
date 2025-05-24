@@ -9,7 +9,7 @@ else
     echo "You are running with root user"
 fi
 
-dnf install mysqlkjhbn -y
+dnf install mysql -y
 if [ $? -eq 0 ]
 then
     echo "Installing MYSQL is.. SUCCESS"
