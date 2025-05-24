@@ -9,16 +9,22 @@ else
     echo "You are running with root user"
 fi
 
+# validate functions takes input as exit status, what command they tried to install
+VALIDATE(){
+    if [ $? -eq 0 ]
+then
+    echo "Installing python3 is.. SUCCESS"
+else
+    echo "Installing python3 is.. FAIL"
+    exit 1
+fi
+}
+dnf list installed mysql
 if [ $? -ne 0 ]
 then 
     echo "MYSQL is not installed...going to install it"
     dnf install mysql -y
-if [ $? -eq 0 ]
-then
-    echo "Installing MYSQL is.. SUCCESS"
-else
-    echo "Installing MYSQL is.. FAIL"
-    exit 1
+    VALIDATE &? "MYSQL"
 fi
 else
     echo "MYSQL is already installed... nothing to do"
@@ -28,14 +34,8 @@ fi
 if [ $? -ne 0 ]
 then 
     echo "python3 is not installed...going to install it"
-    dnf install python3l -y
-if [ $? -eq 0 ]
-then
-    echo "Installing python3 is.. SUCCESS"
-else
-    echo "Installing python3 is.. FAIL"
-    exit 1
-fi
+    dnf install python3 -y
+    VALIDATE &? "python3"
 else
     echo "python3 is already installed... nothing to do"
     
@@ -45,13 +45,7 @@ if [ $? -ne 0 ]
 then 
     echo "ngnix is not installed...going to install it"
     dnf install ngnix -y
-if [ $? -eq 0 ]
-then
-    echo "Installing MYSQL is.. SUCCESS"
-else
-    echo "Installing ngnix is.. FAIL"
-    exit 1
-fi
+    VALIDATE &? "ngnix"
 else
     echo "ngnix is already installed... nothing to do"
     
