@@ -1,0 +1,11 @@
+#!/bin/bash
+
+userid=$(id -u)
+if [ $userid -eq 0 ]
+then
+    echo "you are running with the root access"
+else
+    echo "ERROR: please run with the roor acces"
+fi
+
+dnf install nginx
