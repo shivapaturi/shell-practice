@@ -4,11 +4,11 @@ USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
 Y="\e[33m"
-W="\e[47m" # white or normal(N) colour 47 or 0 can be used
+N="\e[0m" 
 
 if [ $USERID -ne 0 ]
 then
-    echo -e "$R Error:: Please run this script with root access $W"
+    echo -e "$R Error:: Please run this script with root access $N"
     exit 1 #give other than 0 up to 127
 else
     echo "You are running with root user"
@@ -18,9 +18,9 @@ fi
 VALIDATE(){
     if [ $1 -eq 0 ]
 then
-    echo -e "Installing $2 is..$G SUCCESS $W"
+    echo -e "Installing $2 is..$G SUCCESS $N"
 else
-    echo -e "Installing $2 is..$R FAIL $W"
+    echo -e "Installing $2 is..$R FAIL $N"
     exit 1
 fi
 }
@@ -31,7 +31,7 @@ then
     dnf install mysql -y
     VALIDATE &? "MYSQL"
 else
-    echo -e "Nothing to do MYSQL.. $Y already installed $W"
+    echo -e "Nothing to do MYSQL.. $Y already installed $N"
     
 fi
 
@@ -41,7 +41,7 @@ then
     dnf install python3 -y
     VALIDATE &? "python3"
 else
-    echo -e "Nothing to do python3.. $Y already installed $W"
+    echo -e "Nothing to do python3.. $Y already installed $N"
     
 fi
 
@@ -51,6 +51,6 @@ then
     dnf install ngnix -y
     VALIDATE &? "ngnix"
 else
-    echo -e "Nothing to do ngnix.. $Y already installed $W"
+    echo -e "Nothing to do ngnix.. $Y already installed $N"
     
 fi
