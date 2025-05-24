@@ -9,6 +9,7 @@ else
 fi
 
 dnf install nginx
+
 if [ $? -ne 0 ]
     echo "nginx is not installed and please install"
 else
