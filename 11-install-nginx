@@ -12,7 +12,16 @@ dnf install nginx
 
 if [ $? -ne 0 ]
     echo "ngnix is not installed...going to install it"
+    dnf install ngnix -y
+if [ $? -eq 0]
+then
+    echo "Installing MYSQL is.. SUCCESS"
+else
+    echo "Installing MYSQL is.. FAIL"
+    exit 1
+fi
 else
     echo "ngnix is already installed... nothing to do"
     
 fi
+
