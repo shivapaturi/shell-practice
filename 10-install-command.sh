@@ -7,6 +7,6 @@ then
 else
     echo "You are running with root user"
 fi
-# installing
+
 dnf install mysql -y
 
