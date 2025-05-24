@@ -17,10 +17,10 @@ fi
 # validate functions takes input as exit status, what command they tried to install
 VALIDATE(){
     if [ $1 -eq 0 ]
-then
-    echo -e "Installing $2 is..$G SUCCESS $N"
-else
-    echo -e "Installing $2 is..$R FAIL $N"
+    then
+        echo -e "Installing $2 is..$G SUCCESS $N"
+    else
+        echo -e "Installing $2 is..$R FAILURE $N"
     exit 1
 fi
 }
@@ -34,7 +34,7 @@ else
     echo -e "Nothing to do MYSQL.. $Y already installed $N"
     
 fi
-
+dnf list installed python3
 if [ $? -ne 0 ]
 then 
     echo "python3 is not installed...going to install it"
@@ -42,9 +42,8 @@ then
     VALIDATE &? "python3"
 else
     echo -e "Nothing to do python3.. $Y already installed $N"
-    
 fi
-
+dnf list installed nginx
 if [ $? -ne 0 ]
 then 
     echo "ngnix is not installed...going to install it"
