@@ -11,7 +11,7 @@ fi
 dnf install nginx
 if [ $? -eq 0 ]
     echo "nginx is installed and success"
-    exit 1
+    
 else
     ech "nginx need to install"
 fi
