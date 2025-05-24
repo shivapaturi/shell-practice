@@ -11,7 +11,8 @@ fi
 dnf install nginx
 
 if [ $? -ne 0 ]
-    echo "nginx is not installed and please install"
+    echo "ngnix is not installed...going to install it"
 else
-    echo "nginx is already installed"
+    echo "ngnix is already installed... nothing to do"
+    
 fi
