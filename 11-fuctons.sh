@@ -11,11 +11,11 @@ fi
 
 # validate functions takes input as exit status, what command they tried to install
 VALIDATE(){
-    if [ $? -eq 0 ]
+    if [ $1 -eq 0 ]
 then
-    echo "Installing python3 is.. SUCCESS"
+    echo "Installing $2 is.. SUCCESS"
 else
-    echo "Installing python3 is.. FAIL"
+    echo "Installing $2 is.. FAIL"
     exit 1
 fi
 }
