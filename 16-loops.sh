@@ -8,7 +8,7 @@ N="\e[0m"
 LOGS_FOLDER="/var/log/shellscript-logs"
 SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
-PACKAGES=("mysql" "python3" "nginx" "mongodb")
+PACKAGES=("mysql" "python3" "nginx")
 
 mkdir -p $LOGS_FOLDER
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
@@ -38,7 +38,7 @@ do
     dnf list installed $packages &>>$LOG_FILE
     if [ $? -ne 0 ]
     then
-        echo "$packages is not installed... $Y going to install it $N" | tee -a $LOG_FILE
+        echo "$packages is not installed... going to install it" | tee -a $LOG_FILE
         dnf install $packages -y &>>$LOG_FILE
         VALIDATE $? "$packages"
     else
