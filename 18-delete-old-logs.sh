@@ -1,7 +1,7 @@
 #!/bin/bash
 
-for item in apple bannana orange
+for ((i=1; i<=100; i++))
 do
-  echo "fruits: $item"
+  echo "Number: $i"
 done
 
