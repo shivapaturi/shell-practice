@@ -2,6 +2,6 @@
 
 for item in apple bannana orange
 do
-  echo "item: $@"
+  echo "fruits: $item"
 done
 
