@@ -2,5 +2,5 @@
 
 for item in apple banana cherry
 do
-  echo "Fruit: $item"
+  echo "Fruit: $@"
 done
