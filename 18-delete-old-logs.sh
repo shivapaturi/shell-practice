@@ -1,7 +1,7 @@
 #!/bin/bash
 
-for (( i=1; i<=100; i++ ))
+for (apple, bannana, orange)
 do
-  echo "No: $i"
+  echo "item: $@"
 done
 
