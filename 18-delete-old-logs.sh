@@ -1,6 +1,7 @@
 #!/bin/bash
 
-for item in apple banana cherry
+for (( i=1; i<=5; i++ ))
 do
-  echo "Fruit: $@"
+  echo "Number: $i"
 done
+
