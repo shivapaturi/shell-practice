@@ -16,17 +16,6 @@ echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 check_root
 mkdir -p $LOGS_FOLDER
 
-usage(){
-    echo -e "$R USAGE:: $N sh 20-backup.sh <dource-dier <destination-dir> <days(optional)>"
-}
-
-if [ $# -lt -2 ]
-then
-    usage
-fi
-
-
-
 check_root(){
 # check the user has root priveleges or not
 if [ $USERID -ne 0 ]
@@ -48,3 +37,12 @@ VALIDATE(){
         exit 1
     fi
 }
+
+usage(){
+    echo -e "$R USAGE:: $N sh 20-backup.sh <dource-dier <destination-dir> <days(optional)>"
+}
+
+if [ $# -lt -2 ]
+then
+    usage
+fi
