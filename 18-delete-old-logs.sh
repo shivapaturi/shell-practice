@@ -42,7 +42,7 @@ while IFS= read -r filepath
 do
     echo "Deleting the files: $filepath" | tee -a $LOG_FILE
     rm -rf $filepath
-done
+done <<< $files_to_delete
  
 echo "Script executed sucessfully"
 
