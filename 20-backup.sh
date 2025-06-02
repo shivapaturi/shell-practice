@@ -61,3 +61,11 @@ then
     echo -e "$R destinatin directory $DEST_DIR does not exist. Please check $N"
     exit 1
 fi
+FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
+
+if [ ! -z $FILES ]
+then
+    echo "Files found"
+else
+    echo "No files found to ZIP older than 14 days ... $Y SKPPING $N"
+fi
