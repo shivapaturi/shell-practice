@@ -48,3 +48,16 @@ if [ $# -lt 2 ]
 then
     usage
 fi
+
+# Checks if $SOURCE_DIR is not a directory.
+if [ ! -d $SOURCE_DIR ] # -d Returns true if the path is a directory.
+then
+    echo -e "$R $SOURCE_DIR does not exist. Please check $N"
+    exit 1
+fi
+
+if [ ! -d $DEST_DIR ] # -d Returns true if the path is a directory.
+then
+    echo -e "$R $DEST_DIR does not exist. Please check $N"
+    exit 1
+fi
