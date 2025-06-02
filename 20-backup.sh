@@ -52,12 +52,12 @@ fi
 # Checks if $SOURCE_DIR is not a directory.
 if [ ! -d $SOURCE_DIR ] # -d Returns true if the path is a directory.
 then
-    echo -e "$R $SOURCE_DIR does not exist. Please check $N"
+    echo -e "$R source directory $SOURCE_DIR does not exist. Please check $N"
     exit 1
 fi
 
 if [ ! -d $DEST_DIR ] # -d Returns true if the path is a directory.
 then
-    echo -e "$R $DEST_DIR does not exist. Please check $N"
+    echo -e "$R destinatin directory $DEST_DIR does not exist. Please check $N"
     exit 1
 fi
