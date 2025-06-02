@@ -14,18 +14,6 @@ Y="\e[33m"
 N="\e[0m"
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
-
-check_root(){
-# check the user has root priveleges or not
-if [ $USERID -ne 0 ]
-then
-    echo -e "$R ERROR:: Please run this script with root access $N" 
-    exit 1 #give other than 0 upto 127
-else
-    echo "You are running with root access" | tee -a $LOG_FILE
-fi
-}
-
 # validate functions takes input as exit status, what command they tried to install
 VALIDATE(){
     if [ $1 -eq 0 ]
@@ -36,6 +24,18 @@ VALIDATE(){
         exit 1
     fi
 }
+
+check_root(){
+# check the user has root priveleges or not
+    if [ $USERID -ne 0 ]
+    then
+        echo -e "$R ERROR:: Please run this script with root access $N" 
+        exit 1 #give other than 0 upto 127
+    else
+        echo "You are running with root access" | tee -a $LOG_FILE
+    fi
+}
+
 check_root
 mkdir -p $LOGS_FOLDER
 
