@@ -40,7 +40,7 @@ check_root
 mkdir -p $LOGS_FOLDER
 
 usage(){
-    echo -e "$R USAGE:: $N sh 20-backup.sh <dource-dier <destination-dir> <days(optional)>"
+    echo -e "$R USAGE:: $N sh 20-backup.sh <source-dir> <destination-dir> <days(optional)>"
 }
 
 if [ $# -lt -2 ]
