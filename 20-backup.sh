@@ -67,5 +67,5 @@ if [ ! -z $FILES ]
 then
     echo "Files found"
 else
-    echo "No files found to ZIP older than 14 days ... $Y SKPPING $N"
+    echo -e "No files found to ZIP older than 14 days ... $Y SKPPING $N"
 fi
