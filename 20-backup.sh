@@ -13,8 +13,7 @@ G="\e[32m"
 Y="\e[33m"
 N="\e[0m"
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
-check_root
-mkdir -p $LOGS_FOLDER
+
 
 check_root(){
 # check the user has root priveleges or not
@@ -37,6 +36,8 @@ VALIDATE(){
         exit 1
     fi
 }
+check_root
+mkdir -p $LOGS_FOLDER
 
 usage(){
     echo -e "$R USAGE:: $N sh 20-backup.sh <dource-dier <destination-dir> <days(optional)>"
