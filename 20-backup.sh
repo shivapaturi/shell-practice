@@ -39,11 +39,12 @@ check_root(){
 check_root
 mkdir -p $LOGS_FOLDER
 
-usage(){
-    echo -e "$R USAGE:: $N sh 20-backup.sh <source-dir> <destination-dir> <days(optional)>"
+usage() {
+    echo -e "${R}USAGE::${N} sh 20-backup.sh <source-dir> <destination-dir> <days(optional)>"
 }
 
-if [ $# -lt -2 ]
-then
+# Check if less than 2 arguments are passed
+if [ $# -lt 2 ]; then
     usage
+    exit 1
 fi
