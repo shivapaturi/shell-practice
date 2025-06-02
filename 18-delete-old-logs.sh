@@ -1,6 +1,5 @@
 #!/bin/bash
 
-
 USERID=$(id -u)
 R="\e[31m"
 G="\e[32m"
@@ -11,7 +10,7 @@ SCRIPT_NAME=$(echo $0 | cut -d "." -f1)
 LOG_FILE="$LOGS_FOLDER/$SCRIPT_NAME.log"
 SOURCE_DIR=/home/ec2-user/app-logs
 
-mkdir -p $LOGS_FOLDER
+
 echo "Script started executing at: $(date)" | tee -a $LOG_FILE
 
 # check the user has root priveleges or not
@@ -33,17 +32,17 @@ VALIDATE(){
         exit 1
     fi
 }
+mkdir -p $LOGS_FOLDER
+echo "Script started executing at $(date)" 
 
-echo "Script started executing at $(date)" | tee -a $LOG_FILE
-
-FILE_TO_DELETE=$(find $SOURCE_DIR -name "*.js" -mtime +14)
+FILE_TO_DELETE=$(find $SOURCE_DIR -name "*.log" -mtime +14)
 
 while IFS= read -r filepath
 do
-    echo "Deleting file: $filepath" | tee -a $LOG_FILE
+    echo "Deleting the files: $filepath" | tee -a $LOG_FILE
     rm -rf $filepath
-done <<< FILE_TO_DELETE
-
+done
+ 
 echo "Script executed sucessfully"
 
 
