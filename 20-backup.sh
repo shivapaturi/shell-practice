@@ -61,6 +61,9 @@ fi
 
 FILES=$(find $SOURCE_DIR -name "*.log" -mtime +$DAYS)
 
+dnf install zip -y &>>$LOG_FILE
+VALIDATE $? "Installing Zip"
+
 if [ ! -z "$FILES" ]
 then
     echo "Files to zip are: $FILES"
