@@ -1,6 +1,7 @@
-     #!/bin/bash
-     while true; do
-       cpu_usage=$(mpstat 1 1 | awk '/all/ {print 100 - $NF}')
-       echo "CPU Usage: $cpu_usage%"
-       sleep 5  # Check every 5 seconds
-     done
+#!/bin/bash
+
+while true; do
+  cpu_usage=$(top -b -n2 -p 1 | fgrep "Cpu(s)" | tail -1 | awk -F'id,' -v prefix="$prefix" '{ split($1, vs, ","); v=vs[length(vs)]; sub("%", "", v); printf "%s%.1f%%\n", prefix, 100 - v }')
+  echo "CPU Usage: ${cpu_usage}"
+  sleep 1
+done
