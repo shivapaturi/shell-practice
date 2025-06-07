@@ -16,3 +16,4 @@ done <<< $DISK_USAGE
 
 if [ -n $MSG ]; then
     echo -e "$MSG"
+fi
