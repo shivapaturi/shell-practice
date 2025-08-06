@@ -1,6 +1,6 @@
 #!/bin/bash
 
-person1=shiva
+person1=shiva  #there should be no space before and after = 
 person2=Mounika
 
 echo "$person1:: Hey $person2, How are you?"
